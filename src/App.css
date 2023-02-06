@@ -1,0 +1,79 @@
+/* Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Variables */
+:root {
+  --main-color-1: #f59e0b;
+  --main-color-2: #fb923c;
+  --main-color-2: #fdba74;
+  --main-color-4: #ffedd5;
+  --background-color: #f8fafc;
+  --background-color-darker: #e2e8f0;
+  --dark-color: #0f172a;
+  --text-color: #1f2937;
+  --gray-medium-color: #4b5563;
+  --white-color: #fff;
+  --green-color: #65a30d;
+  --red-color: #b91c1c;
+}
+
+/* Universal styles */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+}
+
+input, button, select, textarea {
+  font-family: 'Inter', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, i {
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Global classes */
+.mainLayout {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;;
+}

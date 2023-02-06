@@ -1,0 +1,55 @@
+{
+  "userList": [
+    {
+      "id": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
+      "userName": "Justas_Sind",
+      "email": "justas@gmail.com",
+      "password": "123456",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/4623/4623635.png"
+    }
+  ],
+  "userQuestions": [
+    {
+      "id": "2g5ged5c-d4v5-8sc4-1358-5d4v6801d5v45",
+      "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
+      "questionTitle": "Question title 1",
+      "questionContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
+      "likeNumber": 0,
+      "isEdited": false
+    },
+    {
+      "id": "d4ee513a-0459-48a4-af84-fe09ea53df36",
+      "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
+      "questionTitle": "Question title 2",
+      "questionContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
+      "likeNumber": 0,
+      "isEdited": false
+    },
+    {
+      "id": "0deaa9b1-2c4d-4b9d-ba26-3d95b8208d3b",
+      "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
+      "questionTitle": "Question title 3",
+      "questionContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
+      "likeNumber": 0,
+      "isEdited": false
+    }
+  ],
+  "userAnswers": [
+    {
+      "id": "bc689564-0299-41bc-95fe-f2fb21323340",
+      "questionId": "2g5ged5c-d4v5-8sc4-1358-5d4v6801d5v45",
+      "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
+      "answerContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
+      "likeNumber": 0,
+      "isEdited": false
+    },
+    {
+      "id": "e6ab0885-8145-4597-8d85-18338fb8e37a",
+      "questionId": "2g5ged5c-d4v5-8sc4-1358-5d4v6801d5v45",
+      "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
+      "answerContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
+      "likeNumber": 0,
+      "isEdited": false
+    }
+  ]
+}
