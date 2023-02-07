@@ -1,13 +1,16 @@
 import styles from "./styles.module.css";
+import { useNavigate } from "react-router-dom";
 import QuestionContext from "../../contexts/QuestionContext";
+import UserContext from "../../contexts/UserContext";
 import { useContext } from "react";
 import QuestionCard from "./QuestionCard/QuestionCard";
-import UserContext from "../../contexts/UserContext";
 
 function QuestionsPage() {
 
-  const {questionList, answerList} = useContext(QuestionContext);
-  const {userList} = useContext(UserContext);
+  const { questionList, answerList } = useContext(QuestionContext);
+  const { userList, userloggedIn } = useContext(UserContext);
+
+  const navigation = useNavigate();
 
   if(!questionList || !answerList || !userList) {
     return (
@@ -29,13 +32,13 @@ function QuestionsPage() {
 
   return (
     <div className={styles.questionsPage}>
-      <div className={styles.questionsPageContent}>
+      <div className={styles.questionsPageContainer}>
         <div className={styles.questionsPageContentTop}>
           <div className={styles.actionContainer}>
             <h2>
               All questions
             </h2>
-            <button className={styles.askButton}>Ask Question</button>
+            <button className={styles.askButton} onClick={() => userloggedIn ? navigation("/askquestion") : navigation("/login")} >Ask Question</button>
           </div>
           <div className={styles.sortFilterContainer}>
 
