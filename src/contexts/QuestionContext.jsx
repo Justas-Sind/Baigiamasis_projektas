@@ -14,8 +14,16 @@ function QuestionProvider({ children }) {
       setQuestionList(jsonData)
   };
 
+  async function fetchUserAnswers() {
+    const jsonData = await fetch("http://localhost:3000/userAnswers/")
+      .then(res => res.json());
+    
+      setAnswerList(jsonData)
+  };
+
   useEffect(() => {
     fetchUserQuestions();
+    fetchUserAnswers();
   }, []);
 
   return (
@@ -23,7 +31,7 @@ function QuestionProvider({ children }) {
       value={{
         questionList,
         setQuestionList,
-        fetchUserQuestions
+        answerList
       }}
     >
       {children}
