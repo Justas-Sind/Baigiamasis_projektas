@@ -6,6 +6,13 @@
       "email": "justas@gmail.com",
       "password": "123456",
       "avatar": "https://cdn-icons-png.flaticon.com/512/4623/4623635.png"
+    },
+    {
+      "id": "eca53159-b111-4d7d-9b6f-d63214ff0c16",
+      "userName": "Testeris",
+      "email": "testeris@gmail.com",
+      "password": "123456789",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/5627/5627417.png"
     }
   ],
   "userQuestions": [
