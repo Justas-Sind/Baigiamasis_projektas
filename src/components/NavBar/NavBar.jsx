@@ -21,7 +21,7 @@ function NavBar() {
           <img src="./brainoverflow-1.png" alt="company logo" />
         </div>
         <div className={styles.navLinksListContainer}>
-          <Link className={styles.navlink} to={"/home"}>
+          <Link className={styles.navlink} to={"/"}>
             <div className={styles.navlinkContainer}>
               <p>Home</p>
             </div>

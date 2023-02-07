@@ -12,6 +12,7 @@
 
 .logoContainer {
   width: 140px;
+  margin: 0.25rem 0;
 }
 
 .navLinksListContainer {
@@ -63,8 +64,8 @@
 }
 
 .avatarContainer {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 
 .avatarContainer img {
