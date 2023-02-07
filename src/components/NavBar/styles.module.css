@@ -1,0 +1,62 @@
+.nav {
+  box-shadow: 1px 3px 8px var(--background-color-darker);
+  background-color: var(--white-color);
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+}
+
+.logoContainer {
+  width: 140px;
+}
+
+.navLinksListContainer {
+  display: flex;
+  align-items: center;
+}
+
+.navlink {
+  margin-left: 1.5rem;
+}
+
+.navlink:hover {
+  text-decoration: underline black;
+}
+
+.navlink p {
+  font-weight: 600;
+}
+
+.logOutButtonContainer {
+  margin-left: 1.5rem;
+}
+
+.logOutButtonContainer button {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  background: var(--dark-color);
+  transition: all 0.25s ease;
+}
+
+.logOutButtonContainer button:hover {
+  filter: brightness(1.5);
+}
+
+.userInfoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.userInfo {
+  display: flex;
+  gap: 0.5rem;
+}
