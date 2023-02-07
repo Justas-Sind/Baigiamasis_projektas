@@ -69,8 +69,15 @@
   color: var(--red-color);
   font-size: 0.75rem;
   position: absolute;
-  text-align: center;
   width: 100%;
+}
+
+.askQuestionPageContainerBottom form label:first-child p {
+  top: 54px;
+}
+
+.askQuestionPageContainerBottom form label:nth-child(2) p {
+  top: 228px;
 }
 
 .postBtn {
