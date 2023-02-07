@@ -1,7 +1,13 @@
+.homePage {
+  height: 100%;
+}
+
 .hero {
   background: linear-gradient(135deg, #f59e0b, #d32020);
   display: grid;
   place-items: center;
+  height: 100%;
+  opacity: 0.99;
 }
 
 .heroContent {

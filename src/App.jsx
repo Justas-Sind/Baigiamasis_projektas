@@ -5,6 +5,7 @@ import SignUpPage from './components/SignUpPage/SignUpPage';
 import LogInPage from './components/LogInPage/LogInPage';
 import HomePage from './components/HomePage/HomePage';
 import Page404 from './components/Page404/Page404';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         </Routes>
       </main>
       <footer>
-        
+        <Footer />
       </footer>
     </div>
   );
