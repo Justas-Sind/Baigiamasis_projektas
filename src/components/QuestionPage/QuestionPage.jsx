@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 import { useParams } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import QuestionContext from "../../contexts/QuestionContext";
 import UserContext from "../../contexts/UserContext";
@@ -16,28 +16,16 @@ function QuestionPage() {
   const { id } = useParams();
   const questionData = questionList.find(question => question.id === id);
 
-  async function updateQuestionToServer(question) {
-    await fetch(`http://localhost:3000/userQuestions/${questionData.id}`, {
-      method: "PUT",
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(question)
-    });
-  }
-
   function handleLikes() {
     if(!questionData.likes.includes(userloggedIn.id) && !questionData.dislikes.includes(userloggedIn.id)) {
       const updatedQuestionData = {...questionData, likes:[...questionData.likes, userloggedIn.id]};
 
-      updateQuestionToServer(updatedQuestionData);
       updateQuestion(updatedQuestionData);
 
     } else if(questionData.dislikes.includes(userloggedIn.id)) {
       const updatedQuestionData = {...questionData, likes:[...questionData.likes, userloggedIn.id]};
       updatedQuestionData.dislikes = updatedQuestionData.dislikes.filter(id => id !== userloggedIn.id);
 
-      updateQuestionToServer(updatedQuestionData);
       updateQuestion(updatedQuestionData);
     }
   }
@@ -46,24 +34,23 @@ function QuestionPage() {
     if(!questionData.likes.includes(userloggedIn.id) && !questionData.dislikes.includes(userloggedIn.id)) {
       const updatedQuestionData = {...questionData, dislikes:[...questionData.dislikes, userloggedIn.id]};
 
-      updateQuestionToServer(updatedQuestionData);
       updateQuestion(updatedQuestionData);
 
     } else if(questionData.likes.includes(userloggedIn.id)) {
       const updatedQuestionData = {...questionData, dislikes:[...questionData.dislikes, userloggedIn.id]};
       updatedQuestionData.likes = updatedQuestionData.likes.filter(id => id !== userloggedIn.id);
 
-      updateQuestionToServer(updatedQuestionData);
       updateQuestion(updatedQuestionData);
     }
   }
 
   async function handleDelete() {
-    await fetch(`http://localhost:3000/userQuestions/${questionData.id}`, {
-      method: "DELETE"
-    });
     deleteQuestion(questionData.id)
     navigation("/questions");
+  }
+
+  function handleEdit() {
+
   }
 
   return (
@@ -84,7 +71,12 @@ function QuestionPage() {
               <AiFillCaretDown className={styles.disabledAction}/>}
           </div>
           <div className={styles.questionTextContentContainer}>
-            {questionData.questionContent}
+            <div className={styles.questionTextContent}>
+              {questionData.questionContent}
+            </div>
+            <div className={styles.buttonContainer}>
+              <button onClick={() => handleEdit()}>Edit</button>
+            </div>
           </div>
         </div>
         <div className={styles.questionAnswersContainer}>

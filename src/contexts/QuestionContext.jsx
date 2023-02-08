@@ -17,7 +17,7 @@ function QuestionProvider({ children }) {
     fetchUserQuestions();
   }, []);
 
-  function updateQuestion(targetQuestion) {
+  async function updateQuestion(targetQuestion) {
     const index = questionList.findIndex(question => question.id === targetQuestion.id);
     setQuestionList(current => current.map((question, i) => {
       if(i === index) {
@@ -25,11 +25,21 @@ function QuestionProvider({ children }) {
       } else {
         return question;
       }
-    }))
+    }));
+    await fetch(`http://localhost:3000/userQuestions/${targetQuestion.id}`, {
+      method: "PUT",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(targetQuestion)
+    });
   }
 
   function deleteQuestion(deleteTargetId) {
-    setQuestionList(current => current.filter(question => question.id !== deleteTargetId))
+    setQuestionList(current => current.filter(question => question.id !== deleteTargetId));
+    fetch(`http://localhost:3000/userQuestions/${deleteTargetId}`, {
+      method: "DELETE"
+    });
   }
 
   return (
