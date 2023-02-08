@@ -10,7 +10,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
 const schema = yup.object({
-  questionContent: yup.string().required('Please enter the post description').max(500, "Description cannot exceed 500 characters"),
+  questionContent: yup.string().required('Please enter the question description').max(500, "The question content cannot exceed 500 characters"),
 }).required();
 
 function QuestionPage() {
