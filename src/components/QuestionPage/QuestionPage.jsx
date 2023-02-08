@@ -38,6 +38,7 @@ function QuestionPage() {
   } 
 
   const questionData = questionList.find(question => question.id === id);
+  const questionCreator = userList.find(user => user.id === questionData.userId)
 
   function handleLikes() {
     if(!questionData.likes.includes(userloggedIn.id) && !questionData.dislikes.includes(userloggedIn.id)) {
@@ -86,7 +87,7 @@ function QuestionPage() {
             <h2>{questionData.questionTitle}</h2>
             {questionData.isEdited && <p>(Edited)</p>}
           </div>
-          {userloggedIn && 
+          {userloggedIn.id === questionCreator.id && 
             <button className={styles.deleteButton} onClick={() => handleDelete()}>Delete</button>
           }
         </div>
@@ -123,9 +124,18 @@ function QuestionPage() {
               }
             </div>
             {
-              !isEditable && userloggedIn &&
+              !isEditable && userloggedIn.id === questionCreator.id &&
                 <div className={styles.buttonContainer}>
                   <button className={styles.editBtn} onClick={() => setIsEditable(true)}>Edit</button>
+                </div>
+            }
+            {
+              !userloggedIn &&
+                <div className={styles.userContainer}>
+                  <div className={styles.userAvatarContainer}>
+                    <img src={questionCreator.avatar} alt="question creator's avatar" />
+                  </div>
+                  <p>{questionCreator.userName}</p>
                 </div>
             }
           </div>
