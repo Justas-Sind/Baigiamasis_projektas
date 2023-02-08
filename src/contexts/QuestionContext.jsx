@@ -17,10 +17,27 @@ function QuestionProvider({ children }) {
     fetchUserQuestions();
   }, []);
 
+  function updateQuestion(targetQuestion) {
+    const index = questionList.findIndex(question => question.id === targetQuestion.id);
+    setQuestionList(current => current.map((question, i) => {
+      if(i === index) {
+        return targetQuestion;
+      } else {
+        return question;
+      }
+    }))
+  }
+
+  function deleteQuestion(deleteTargetId) {
+    setQuestionList(current => current.filter(question => question.id !== deleteTargetId))
+  }
+
   return (
     <QuestionContext.Provider
       value={{
         questionList,
+        deleteQuestion,
+        updateQuestion,
         setQuestionList
       }}
     >

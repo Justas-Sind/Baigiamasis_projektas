@@ -8,6 +8,8 @@
   box-shadow: 0 0 4px 4px var(--background-color-darker);
   padding: 1rem;
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .questionContentContainer {

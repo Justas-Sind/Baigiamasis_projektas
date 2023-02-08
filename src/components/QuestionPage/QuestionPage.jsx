@@ -1,13 +1,16 @@
 import styles from "./styles.module.css";
 import { useParams } from "react-router-dom";
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import QuestionContext from "../../contexts/QuestionContext";
 import UserContext from "../../contexts/UserContext";
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 
 function QuestionPage() {
 
-  const { questionList } = useContext(QuestionContext);
+  const navigation = useNavigate();
+
+  const { questionList, deleteQuestion, updateQuestion } = useContext(QuestionContext);
   const { userList, userloggedIn } = useContext(UserContext);
 
   const { id } = useParams();
@@ -30,12 +33,14 @@ function QuestionPage() {
       const updatedQuestionData = {...questionData, likes:[...questionData.likes, userloggedIn.id]};
       setQuestionData(updatedQuestionData);
       updateQuestionLikes(updatedQuestionData);
+      updateQuestion(updatedQuestionData);
 
     } else if(questionData.dislikes.includes(userloggedIn.id)) {
       const updatedQuestionData = {...questionData, likes:[...questionData.likes, userloggedIn.id]};
       updatedQuestionData.dislikes = updatedQuestionData.dislikes.filter(id => id !== userloggedIn.id);
       setQuestionData(updatedQuestionData);
       updateQuestionLikes(updatedQuestionData);
+      updateQuestion(updatedQuestionData);
     }
   }
 
@@ -44,13 +49,23 @@ function QuestionPage() {
       const updatedQuestionData = {...questionData, dislikes:[...questionData.dislikes, userloggedIn.id]};
       setQuestionData(updatedQuestionData);
       updateQuestionLikes(updatedQuestionData);
+      updateQuestion(updatedQuestionData);
 
     } else if(questionData.likes.includes(userloggedIn.id)) {
       const updatedQuestionData = {...questionData, dislikes:[...questionData.dislikes, userloggedIn.id]};
       updatedQuestionData.likes = updatedQuestionData.likes.filter(id => id !== userloggedIn.id);
       setQuestionData(updatedQuestionData);
       updateQuestionLikes(updatedQuestionData);
+      updateQuestion(updatedQuestionData);
     }
+  }
+
+  async function handleDelete() {
+    await fetch(`http://localhost:3000/userQuestions/${questionData.id}`, {
+      method: "DELETE"
+    });
+    deleteQuestion(questionData.id)
+    navigation("/questions");
   }
 
   return (
@@ -58,6 +73,7 @@ function QuestionPage() {
       <div className={styles.questionPageContainer}>
         <div className={styles.questionTitleContainer}>
           <h2>{questionData.questionTitle}</h2>
+          <button onClick={() => handleDelete()}>Delete</button>
         </div>
         <div className={styles.questionContentContainer}>
           <div className={styles.questionLikesContainer}>

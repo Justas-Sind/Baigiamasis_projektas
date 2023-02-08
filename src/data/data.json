@@ -48,26 +48,6 @@
         "eca53159-b111-4d7d-9b6f-d63214ff0c16"
       ],
       "isEdited": false
-    },
-    {
-      "id": "d7c879b5-5886-4a81-8447-03e66063c47b",
-      "userId": "eca53159-b111-4d7d-9b6f-d63214ff0c16",
-      "questionTitle": "cccc",
-      "questionContent": "ccccccc",
-      "likes": [],
-      "dislikes": [],
-      "isEdited": false
-    },
-    {
-      "id": "372b58b9-a89a-482a-b16b-763691b8de85",
-      "userId": "eca53159-b111-4d7d-9b6f-d63214ff0c16",
-      "questionTitle": "cc",
-      "questionContent": "ccc",
-      "likes": [
-        "eca53159-b111-4d7d-9b6f-d63214ff0c16"
-      ],
-      "dislikes": [],
-      "isEdited": false
     }
   ],
   "userAnswers": [
