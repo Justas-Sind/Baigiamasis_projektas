@@ -43,10 +43,10 @@
       "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
       "questionTitle": "Question title 3",
       "questionContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
-      "likes": [],
-      "dislikes": [
+      "likes": [
         "eca53159-b111-4d7d-9b6f-d63214ff0c16"
       ],
+      "dislikes": [],
       "isEdited": false
     },
     {
