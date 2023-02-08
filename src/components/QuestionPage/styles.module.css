@@ -40,16 +40,16 @@
 }
 
 .activeButton {
-  color: var(--main-color-1);
+  color: var(--gray-medium-color);
 }
 
 .activeButton:hover {
   cursor: pointer;
-  filter: brightness(1.1);
+  filter: brightness(1.3);
 }
 
 .suspendedButton {
-  color: var(--gray-medium-color);
+  color: var(--main-color-1);
 }
 
 .disabledAction {

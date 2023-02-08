@@ -68,7 +68,6 @@ function QuestionPage() {
             {userloggedIn ? 
               <AiFillCaretDown className={questionData.dislikes.includes(userloggedIn.id) ? styles.suspendedButton : styles.activeButton} onClick={() => handleDislikes()}/> : 
               <AiFillCaretDown className={styles.disabledAction}/>}
-            
           </div>
           <div className={styles.questionTextContentContainer}>
             {questionData.questionContent}
