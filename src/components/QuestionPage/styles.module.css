@@ -45,6 +45,10 @@
   margin-left: 1.5rem;
 }
 
+.disabledAction {
+  visibility: hidden;
+}
+
 /*
 .askButton {
   cursor: pointer;

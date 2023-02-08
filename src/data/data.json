@@ -22,11 +22,9 @@
       "questionTitle": "Question title 1",
       "questionContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
       "likes": [
-
+        "eca53159-b111-4d7d-9b6f-d63214ff0c16"
       ],
-      "dislikes": [
-
-      ],
+      "dislikes": [],
       "isEdited": false
     },
     {
@@ -35,11 +33,9 @@
       "questionTitle": "Question title 2",
       "questionContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
       "likes": [
-
+        "eca53159-b111-4d7d-9b6f-d63214ff0c16"
       ],
-      "dislikes": [
-        
-      ],
+      "dislikes": [],
       "isEdited": false
     },
     {
@@ -47,11 +43,9 @@
       "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
       "questionTitle": "Question title 3",
       "questionContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
-      "likes": [
-
-      ],
+      "likes": [],
       "dislikes": [
-        
+        "eca53159-b111-4d7d-9b6f-d63214ff0c16"
       ],
       "isEdited": false
     },
@@ -60,12 +54,8 @@
       "userId": "eca53159-b111-4d7d-9b6f-d63214ff0c16",
       "questionTitle": "cccc",
       "questionContent": "ccccccc",
-      "likes": [
-
-      ],
-      "dislikes": [
-        
-      ],
+      "likes": [],
+      "dislikes": [],
       "isEdited": false
     },
     {
@@ -73,12 +63,8 @@
       "userId": "eca53159-b111-4d7d-9b6f-d63214ff0c16",
       "questionTitle": "cc",
       "questionContent": "ccc",
-      "likes": [
-
-      ],
-      "dislikes": [
-        
-      ],
+      "likes": [],
+      "dislikes": [],
       "isEdited": false
     }
   ],
@@ -88,12 +74,8 @@
       "questionId": "2g5ged5c-d4v5-8sc4-1358-5d4v6801d5v45",
       "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
       "answerContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
-      "likes": [
-
-      ],
-      "dislikes": [
-        
-      ],
+      "likes": [],
+      "dislikes": [],
       "isEdited": false
     },
     {
@@ -101,12 +83,8 @@
       "questionId": "2g5ged5c-d4v5-8sc4-1358-5d4v6801d5v45",
       "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
       "answerContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
-      "likes": [
-
-      ],
-      "dislikes": [
-        
-      ],
+      "likes": [],
+      "dislikes": [],
       "isEdited": false
     }
   ]
