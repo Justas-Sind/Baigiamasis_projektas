@@ -14,11 +14,9 @@ function QuestionPage() {
   const { userList, userloggedIn } = useContext(UserContext);
 
   const { id } = useParams();
-  const questionDataExtracted = questionList.find(question => question.id === id);
+  const questionData = questionList.find(question => question.id === id);
 
-  const [questionData, setQuestionData] = useState(questionDataExtracted);
-
-  async function updateQuestionLikes(question) {
+  async function updateQuestionToServer(question) {
     await fetch(`http://localhost:3000/userQuestions/${questionData.id}`, {
       method: "PUT",
       headers: {
@@ -31,15 +29,15 @@ function QuestionPage() {
   function handleLikes() {
     if(!questionData.likes.includes(userloggedIn.id) && !questionData.dislikes.includes(userloggedIn.id)) {
       const updatedQuestionData = {...questionData, likes:[...questionData.likes, userloggedIn.id]};
-      setQuestionData(updatedQuestionData);
-      updateQuestionLikes(updatedQuestionData);
+
+      updateQuestionToServer(updatedQuestionData);
       updateQuestion(updatedQuestionData);
 
     } else if(questionData.dislikes.includes(userloggedIn.id)) {
       const updatedQuestionData = {...questionData, likes:[...questionData.likes, userloggedIn.id]};
       updatedQuestionData.dislikes = updatedQuestionData.dislikes.filter(id => id !== userloggedIn.id);
-      setQuestionData(updatedQuestionData);
-      updateQuestionLikes(updatedQuestionData);
+
+      updateQuestionToServer(updatedQuestionData);
       updateQuestion(updatedQuestionData);
     }
   }
@@ -47,15 +45,15 @@ function QuestionPage() {
   function handleDislikes() {
     if(!questionData.likes.includes(userloggedIn.id) && !questionData.dislikes.includes(userloggedIn.id)) {
       const updatedQuestionData = {...questionData, dislikes:[...questionData.dislikes, userloggedIn.id]};
-      setQuestionData(updatedQuestionData);
-      updateQuestionLikes(updatedQuestionData);
+
+      updateQuestionToServer(updatedQuestionData);
       updateQuestion(updatedQuestionData);
 
     } else if(questionData.likes.includes(userloggedIn.id)) {
       const updatedQuestionData = {...questionData, dislikes:[...questionData.dislikes, userloggedIn.id]};
       updatedQuestionData.likes = updatedQuestionData.likes.filter(id => id !== userloggedIn.id);
-      setQuestionData(updatedQuestionData);
-      updateQuestionLikes(updatedQuestionData);
+
+      updateQuestionToServer(updatedQuestionData);
       updateQuestion(updatedQuestionData);
     }
   }
