@@ -8,6 +8,7 @@ import Page404 from './components/Page404/Page404';
 import Footer from './components/Footer/Footer';
 import QuestionsPage from './components/QuestionsPage/QuestionsPage';
 import AskQuestionPage from './components/AskQuestionPage/AskQuestionPage';
+import QuestionPage from './components/QuestionPage/QuestionPage';
 import UserContext from './contexts/UserContext';
 import { useContext } from 'react';
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LogInPage />} />
           <Route path="/questions" element={<QuestionsPage />} />
+          <Route path="/questions/:id" element={<QuestionPage />} />
           {userloggedIn && <Route path="/askquestion" element={<AskQuestionPage />} />}
           <Route path="*" element={<Page404 />}/>
         </Routes>

@@ -1,14 +1,18 @@
 import styles from "./styles.module.css";
+import { useNavigate } from "react-router-dom";
+
 
 function QuestionCard( {questionData, answerNumber, questionOwner} ) {
 
+  const navigation = useNavigate();
 
+  const likeNumber = questionData.likes.length - questionData.dislikes.length;
 
   return (
-    <div className={styles.question}>
+    <div className={styles.question} onClick={() => navigation(`/questions/${questionData.id}`)} >
       <div className={styles.likesAndAnswersContainer}>
         <div className={styles.likeNumber}>
-          <p>{questionData.likeNumber} likes</p>
+          <p>{likeNumber} likes</p>
         </div>
         <div className={styles.answerNumber}>
           <p>{answerNumber} answers</p>

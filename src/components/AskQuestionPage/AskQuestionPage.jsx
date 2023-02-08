@@ -36,7 +36,8 @@ function AskQuestionPage() {
       userId: userloggedIn.id,
       questionTitle: data.questionTitle,
       questionContent: data.questionContent,
-      likeNumber: 0,
+      likes: [],
+      dislikes: [],
       isEdited: false
     };
 
