@@ -12,6 +12,35 @@
   justify-content: space-between;
 }
 
+.questionTitleContainerLeft {
+  display: flex;
+  align-items: flex-end;
+}
+
+.deleteButton {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  background: var(--red-color);
+  transition: all 0.25s ease;
+}
+
+.deleteButton:hover {
+  filter: brightness(1.1);
+}
+
+.questionTitleContainerLeft p {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 0.25rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
 .questionContentContainer {
   background: var(--white-color);
   box-shadow: 0 0 4px 4px var(--background-color-darker);
@@ -35,6 +64,10 @@
 .questionTextContentContainer {
   margin-top: 0.5rem;
   margin-left: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .questionLikesContainer svg {
@@ -58,22 +91,114 @@
   visibility: hidden;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
 
-/*
-.askButton {
+.loaderContainer {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.loaderContainer .gifContainer {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.messageContainer {
+  margin-top: 2rem;
+}
+
+.messageContainer .message{
+  text-align: center;
+}
+
+.editBtn {
   cursor: pointer;
   font-weight: 500;
-  padding: 0.5rem 1.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.35rem;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  background: var(--gray-medium-color);
+  transition: all 0.25s ease;
+}
+
+.editBtn:hover {
+  filter: contrast(1.25);
+}
+
+/* Form styles */
+
+.questionTextContent form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.questionTextContent form label {
+  position: relative;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.questionTextContent form textarea {
+  padding:0.3rem 0.5rem;
+  background-color: var(--background-color-darker);
+  border: none;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+}
+
+.questionTextContent form textarea:focus {
+  outline: none;
+}
+
+.questionTextContent form textarea {
+  width: 100%;
+  height: 200px;
+  resize: none;
+  font-size: 1rem;
+}
+
+.questionTextContent form p {
+  color: var(--red-color);
+  font-size: 0.75rem;
+  position: absolute;
+  width: 100%;
+}
+
+.questionTextContent form label p {
+  top: 228px;
+}
+
+.questionTextContent form button {
+  align-self: flex-end;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.35rem 1rem;
   border-radius: 0.5rem;
   font-size: 0.8rem;
   border: none;
   color: #fff;
-  background: var(--text-color);
   transition: all 0.25s ease;
+  margin-left: 0.5rem;
 }
 
-.askButton:hover {
-  transform: scale(1.05);
+.questionTextContent form button:hover {
+  filter: contrast(1.25);
 }
-*/
+
+.completeBtn {
+  background: var(--green-color);
+}
+
+.cancelBtn {
+  background: var(--red-color);
+}
 

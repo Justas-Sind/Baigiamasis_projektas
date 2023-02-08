@@ -1,19 +1,42 @@
 import styles from "./styles.module.css";
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import QuestionContext from "../../contexts/QuestionContext";
 import UserContext from "../../contexts/UserContext";
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+const schema = yup.object({
+  questionContent: yup.string().required('Please enter the post description').max(500, "Description cannot exceed 500 characters"),
+}).required();
 
 function QuestionPage() {
 
   const navigation = useNavigate();
+  const { register, handleSubmit, formState:{ errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
 
   const { questionList, deleteQuestion, updateQuestion } = useContext(QuestionContext);
   const { userList, userloggedIn } = useContext(UserContext);
 
   const { id } = useParams();
+
+  const [isEditable, setIsEditable] = useState(false);
+
+  if(!questionList || !userList) {
+    return (
+      <div className={styles.loaderContainer}>
+        <div className={styles.gifContainer}>
+          <img src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" alt="loading" />
+        </div>
+      </div>
+    )
+  } 
+
   const questionData = questionList.find(question => question.id === id);
 
   function handleLikes() {
@@ -49,16 +72,23 @@ function QuestionPage() {
     navigation("/questions");
   }
 
-  function handleEdit() {
-
-  }
+  const onSubmit = data => {
+    const updatedQuestionData = {...questionData, questionContent: data.questionContent, isEdited: true};
+    updateQuestion(updatedQuestionData);
+    setIsEditable(false);
+  };
 
   return (
     <div className={styles.questionPage}>
       <div className={styles.questionPageContainer}>
         <div className={styles.questionTitleContainer}>
-          <h2>{questionData.questionTitle}</h2>
-          <button onClick={() => handleDelete()}>Delete</button>
+          <div className={styles.questionTitleContainerLeft}>
+            <h2>{questionData.questionTitle}</h2>
+            {questionData.isEdited && <p>(Edited)</p>}
+          </div>
+          {userloggedIn && 
+            <button className={styles.deleteButton} onClick={() => handleDelete()}>Delete</button>
+          }
         </div>
         <div className={styles.questionContentContainer}>
           <div className={styles.questionLikesContainer}>
@@ -72,11 +102,32 @@ function QuestionPage() {
           </div>
           <div className={styles.questionTextContentContainer}>
             <div className={styles.questionTextContent}>
-              {questionData.questionContent}
+              {
+                isEditable ?
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                    <label>
+                      <textarea defaultValue={questionData.questionContent} {...register("questionContent")}/>
+                      <p>{errors.questionContent?.message}</p>
+                    </label>
+                    <div className={styles.buttonContainer}>
+                      <button className={styles.completeBtn} type="submit">
+                        Complete
+                      </button>
+                      <button className={styles.cancelBtn} onClick={() => setIsEditable(false)}>
+                        Cancel
+                      </button>
+                    </div>
+                  </form> 
+                  : 
+                  <p>{questionData.questionContent}</p>
+              }
             </div>
-            <div className={styles.buttonContainer}>
-              <button onClick={() => handleEdit()}>Edit</button>
-            </div>
+            {
+              !isEditable && userloggedIn &&
+                <div className={styles.buttonContainer}>
+                  <button className={styles.editBtn} onClick={() => setIsEditable(true)}>Edit</button>
+                </div>
+            }
           </div>
         </div>
         <div className={styles.questionAnswersContainer}>
