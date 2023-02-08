@@ -4,6 +4,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from './contexts/UserContext';
 import { QuestionProvider } from './contexts/QuestionContext';
+import { AnswerProvider } from './contexts/AnswerContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,7 +12,9 @@ root.render(
     <BrowserRouter>
       <UserProvider>
         <QuestionProvider>
-          <App />
+          <AnswerProvider>
+            <App />
+          </AnswerProvider>
         </QuestionProvider>
       </UserProvider>
     </BrowserRouter>

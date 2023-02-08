@@ -2,12 +2,14 @@ import styles from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
 import QuestionContext from "../../contexts/QuestionContext";
 import UserContext from "../../contexts/UserContext";
+import AnswerContext from "../../contexts/AnswerContext";
 import { useContext } from "react";
 import QuestionCard from "./QuestionCard/QuestionCard";
 
 function QuestionsPage() {
 
-  const { questionList, answerList } = useContext(QuestionContext);
+  const { questionList } = useContext(QuestionContext);
+  const { answerList } = useContext(AnswerContext);
   const { userList, userloggedIn } = useContext(UserContext);
 
   const navigation = useNavigate();

@@ -5,7 +5,6 @@ const QuestionContext = createContext();
 function QuestionProvider({ children }) {
 
   const [questionList, setQuestionList] = useState(null);
-  const [answerList, setAnswerList] = useState(null);
 
   async function fetchUserQuestions() {
     const jsonData = await fetch("http://localhost:3000/userQuestions/")
@@ -14,24 +13,15 @@ function QuestionProvider({ children }) {
       setQuestionList(jsonData)
   };
 
-  async function fetchUserAnswers() {
-    const jsonData = await fetch("http://localhost:3000/userAnswers/")
-      .then(res => res.json());
-    
-      setAnswerList(jsonData)
-  };
-
   useEffect(() => {
     fetchUserQuestions();
-    fetchUserAnswers();
   }, []);
 
   return (
     <QuestionContext.Provider
       value={{
         questionList,
-        setQuestionList,
-        answerList
+        setQuestionList
       }}
     >
       {children}

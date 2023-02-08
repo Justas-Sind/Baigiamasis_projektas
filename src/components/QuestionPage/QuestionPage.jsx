@@ -7,7 +7,7 @@ import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 
 function QuestionPage() {
 
-  const { questionList, answerList } = useContext(QuestionContext);
+  const { questionList } = useContext(QuestionContext);
   const { userList, userloggedIn } = useContext(UserContext);
 
   const { id } = useParams();
