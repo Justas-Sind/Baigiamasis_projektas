@@ -61,9 +61,13 @@ function QuestionPage() {
         </div>
         <div className={styles.questionContentContainer}>
           <div className={styles.questionLikesContainer}>
-            {userloggedIn ? <AiFillCaretUp onClick={() => handleLikes()}/> : <AiFillCaretUp className={styles.disabledAction}/>}
+            {userloggedIn ? 
+              <AiFillCaretUp className={questionData.likes.includes(userloggedIn.id) ? styles.suspendedButton : styles.activeButton} onClick={() => handleLikes()}/> : 
+              <AiFillCaretUp className={styles.disabledAction}/>}
             <p>{questionData.likes.length - questionData.dislikes.length}</p>
-            {userloggedIn ? <AiFillCaretDown onClick={() => handleDislikes()}/> : <AiFillCaretDown className={styles.disabledAction}/>}
+            {userloggedIn ? 
+              <AiFillCaretDown className={questionData.dislikes.includes(userloggedIn.id) ? styles.suspendedButton : styles.activeButton} onClick={() => handleDislikes()}/> : 
+              <AiFillCaretDown className={styles.disabledAction}/>}
             
           </div>
           <div className={styles.questionTextContentContainer}>

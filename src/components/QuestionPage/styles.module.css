@@ -30,24 +30,32 @@
   font-size: 1.25rem;
 }
 
-.questionLikesContainer svg {
-  font-size: 2rem;
-  color: var(--main-color-1);
-}
-
-.questionLikesContainer svg:hover {
-  cursor: pointer;
-  filter: brightness(1.1);
-}
-
 .questionTextContentContainer {
   margin-top: 0.5rem;
   margin-left: 1.5rem;
 }
 
+.questionLikesContainer svg {
+  font-size: 2rem;
+}
+
+.activeButton {
+  color: var(--main-color-1);
+}
+
+.activeButton:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+.suspendedButton {
+  color: var(--gray-medium-color);
+}
+
 .disabledAction {
   visibility: hidden;
 }
+
 
 /*
 .askButton {

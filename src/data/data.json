@@ -63,7 +63,9 @@
       "userId": "eca53159-b111-4d7d-9b6f-d63214ff0c16",
       "questionTitle": "cc",
       "questionContent": "ccc",
-      "likes": [],
+      "likes": [
+        "eca53159-b111-4d7d-9b6f-d63214ff0c16"
+      ],
       "dislikes": [],
       "isEdited": false
     }
