@@ -19,7 +19,7 @@ function HomePage() {
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <h1>brain <span>overflow</span></h1>
-          <p>A place where all questions are answered</p>
+          <p>Where all questions are answered</p>
           <button className={styles.heroButton} onClick={() => handleButtonClick()}>
             Sign Up
           </button>

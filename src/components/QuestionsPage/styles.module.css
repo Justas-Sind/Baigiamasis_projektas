@@ -1,11 +1,17 @@
+.questionsPage {
+  background: linear-gradient(135deg, #f59e0b, #d32020);
+  height: 100%;
+  padding: 2rem 0;
+}
+
 .questionsPageContainer {
   width: 80vw;
-  margin: 2rem auto;
+  margin: 0 auto;
 }
 
 .questionsPageContentTop {
-  background: var(--white-color);
-  box-shadow: 0 0 4px 4px var(--background-color-darker);
+  background: var(--background-color);
+  border-radius: 5px;
   padding: 1rem;
 }
 
@@ -32,6 +38,7 @@
 
 .sortFilterButton:hover {
   cursor: pointer;
+  filter: brightness(0.95);
 }
 
 .sortFilterButton p {
@@ -56,9 +63,7 @@
 }
 
 .questionsPageContentBottom {
-  margin: 2rem 0;
-  background: var(--background-color);
-  box-shadow: 0 0 8px var(--background-color-darker);
+  margin-top: 2rem;
 }
 
 .loaderContainer {

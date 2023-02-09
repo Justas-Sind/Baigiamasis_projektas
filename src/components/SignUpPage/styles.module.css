@@ -1,10 +1,15 @@
 .signUpPage {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #f59e0b, #d32020);
+  height: 100%;
+  padding: 2rem 0;
 }
 
 .pageContainer {
-  margin-top: 5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: var(--background-color);
 }
 
 .pageContainer form {
@@ -18,6 +23,7 @@
 .pageContainer form label {
   position: relative;
   font-weight: 600;
+  text-align: center;
 }
 
 .pageContainer form input {

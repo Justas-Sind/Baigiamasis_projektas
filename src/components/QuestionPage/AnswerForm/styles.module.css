@@ -1,7 +1,7 @@
 .questionAnswerFormContainer {
   margin-top: 1rem;
   background: var(--white-color);
-  box-shadow: 0 0 4px 4px var(--background-color-darker);
+  border-radius: 5px;
   padding: 1rem;
 }
 

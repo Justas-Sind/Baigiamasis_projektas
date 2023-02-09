@@ -1,7 +1,5 @@
 .footer {
-  box-shadow: 0 0 8px 2px var(--background-color-darker);
   background-color: var(--white-color);
-  z-index: -1;
 }
 
 .footerContainer {
