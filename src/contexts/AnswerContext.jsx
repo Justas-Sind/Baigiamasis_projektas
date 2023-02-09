@@ -42,12 +42,24 @@ function AnswerProvider({ children }) {
     });
   }
 
+  function postAnswer(answer) {
+    setAnswerList([...answerList, answer]);
+    fetch("http://localhost:3000/userAnswers/", {
+      method: "POST",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(answer)
+    });
+  }
+
   return (
     <AnswerContext.Provider
       value={{
         answerList,
         updateAnswer,
-        deleteAnswer
+        deleteAnswer,
+        postAnswer
       }}
     >
       {children}
