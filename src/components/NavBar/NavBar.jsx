@@ -31,6 +31,11 @@ function NavBar() {
               <p>Questions</p>
             </div>
           </Link>
+          <Link className={styles.navlink} to={userloggedIn ? "/askquestion" : "/login"}>
+            <div className={styles.navlinkContainer}>
+              <p>Ask</p>
+            </div>
+          </Link>
         </div>
         {userloggedIn ?
           <div className={styles.userInfoContainer}>
