@@ -53,24 +53,13 @@ function QuestionProvider({ children }) {
     });
   }
 
-  function handleSort(sortType, answerNumberHelper) {
-    let sortedQuestionList = [...questionList];
-    if(sortType === "mostAnswers") {
-      sortedQuestionList.sort((a,b) => answerNumberHelper(b).length - answerNumberHelper(a).length);
-    } else if(sortType === "leastAnswers") {
-      sortedQuestionList.sort((a,b) => answerNumberHelper(a).length - answerNumberHelper(b).length);
-    }
-    setQuestionList(sortedQuestionList);
-  }
-
   return (
     <QuestionContext.Provider
       value={{
         questionList,
         deleteQuestion,
         updateQuestion,
-        postQuestion,
-        handleSort
+        postQuestion
       }}
     >
       {children}

@@ -37,22 +37,30 @@ function QuestionsPage() {
     )
   }
 
-  function handleFilter(filterType) {
+  function answerNumberHelper(question) {
+    return answerList.filter(answer => answer.questionId === question.id);
+  }
+
+  function handleFilterSort(filterType, sortType) {
+    let filteredQuestionList = [...questionList];
+
+    if(sortType === "mostAnswers") {
+      filteredQuestionList.sort((a,b) => answerNumberHelper(b).length - answerNumberHelper(a).length);
+    } else if(sortType === "leastAnswers") {
+      filteredQuestionList.sort((a,b) => answerNumberHelper(a).length - answerNumberHelper(b).length);
+    }
+
     if(filterType === "allQuestions") {
-      setFilteredList(null);
+      setFilteredList(filteredQuestionList);
     } else if(filterType === "noAnswers") {
-      let newQuestionList = questionList.filter(question => !(answerList.some(answer => answer.questionId === question.id)));
-      setFilteredList(newQuestionList);
+      filteredQuestionList = filteredQuestionList.filter(question => !(answerList.some(answer => answer.questionId === question.id)));
+      setFilteredList(filteredQuestionList);
     } else if(filterType === "withAnswers") {
-      let newQuestionList = questionList.filter(question => answerList.some(answer => answer.questionId === question.id));
-      setFilteredList(newQuestionList);
+      filteredQuestionList = filteredQuestionList.filter(question => answerList.some(answer => answer.questionId === question.id));
+      setFilteredList(filteredQuestionList);
     }
     setFilterSortOpen(false);
   }
-
-
-
-
 
   return (
     <div className={styles.questionsPage}>
@@ -69,7 +77,7 @@ function QuestionsPage() {
               <IoFilterSharp className={styles.filter} />
               <p>Filter</p>
             </div>
-            {filterSortOpen && <FilterSort handleFilter={handleFilter} />}
+            {filterSortOpen && <FilterSort handleFilterSort={handleFilterSort} />}
           </div>
         </div>
         <div className={styles.questionsPageContentBottom}>

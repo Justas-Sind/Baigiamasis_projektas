@@ -1,13 +1,7 @@
 import styles from "./styles.module.css";
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
-import QuestionContext from "../../../contexts/QuestionContext";
-import AnswerContext from "../../../contexts/AnswerContext";
 
-function FilterSort( {handleFilter} ) {
-
-  const { answerNumberHelper } = useContext(AnswerContext);
-  const { handleSort } = useContext(QuestionContext);
+function FilterSort( {handleFilterSort} ) {
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -17,8 +11,7 @@ function FilterSort( {handleFilter} ) {
   });
 
   const onSubmit = data => {
-    handleFilter(data.filter);
-    handleSort(data.sort, answerNumberHelper);
+    handleFilterSort(data.filter, data.sort);
   };
 
   return (
