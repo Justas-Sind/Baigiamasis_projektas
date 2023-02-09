@@ -18,7 +18,7 @@ function NavBar() {
     <nav className={styles.nav}>
       <div className={styles.navContent}>
         <div className={styles.logoContainer}>
-          <img src="./brainoverflow-1.png" alt="company logo" />
+          <img src="https://i.imgur.com/X77tlEQ.png" alt="company logo" />
         </div>
         <div className={styles.navLinksListContainer}>
           <Link className={styles.navlink} to={"/"}>

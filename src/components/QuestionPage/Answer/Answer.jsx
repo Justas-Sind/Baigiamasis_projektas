@@ -112,6 +112,7 @@ function Answer( {answerData} ) {
             </div>
         }
       </div>
+      {answerData.isEdited && <p className={styles.editMarker}>Edited</p>}
   </div>
   );
 }

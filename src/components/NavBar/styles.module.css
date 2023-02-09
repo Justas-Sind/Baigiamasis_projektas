@@ -64,8 +64,10 @@
 }
 
 .avatarContainer {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .avatarContainer img {
