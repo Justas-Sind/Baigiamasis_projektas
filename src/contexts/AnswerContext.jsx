@@ -53,13 +53,18 @@ function AnswerProvider({ children }) {
     });
   }
 
+  function answerNumberHelper(question) {
+    return answerList.filter(answer => answer.questionId === question.id);
+  }
+
   return (
     <AnswerContext.Provider
       value={{
         answerList,
         updateAnswer,
         deleteAnswer,
-        postAnswer
+        postAnswer,
+        answerNumberHelper
       }}
     >
       {children}

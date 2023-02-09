@@ -50,18 +50,9 @@ function QuestionsPage() {
     setFilterSortOpen(false);
   }
 
-  function answerNumberHelper(question) {
-    return answerList.filter(answer => answer.questionId === question.id);
-  }
 
-  function handleSort(sortType) {
-    let sortedQuestionList = [...questionList];
-    if(sortType === "mostAnswers") {
-      sortedQuestionList.sort((a,b) => answerNumberHelper(b).length - answerNumberHelper(a).length);
-    } else if(sortType === "leastAnswers") {
-      sortedQuestionList.sort((a,b) => answerNumberHelper(a).length - answerNumberHelper(b).length);
-    }
-  }
+
+
 
   return (
     <div className={styles.questionsPage}>
@@ -78,7 +69,7 @@ function QuestionsPage() {
               <IoFilterSharp className={styles.filter} />
               <p>Filter</p>
             </div>
-            {filterSortOpen && <FilterSort handleFilter={handleFilter} handleSort={handleSort} />}
+            {filterSortOpen && <FilterSort handleFilter={handleFilter} />}
           </div>
         </div>
         <div className={styles.questionsPageContentBottom}>
