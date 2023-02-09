@@ -14,6 +14,31 @@
   justify-content: space-between;
 }
 
+.sortFilterContainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sortFilterButton {
+  align-self: flex-start;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color-darker);
+  padding: 0.25rem;
+  border-radius: 5px;
+}
+
+.sortFilterButton:hover {
+  cursor: pointer;
+}
+
+.sortFilterButton p {
+  font-size: 0.8rem;;
+  margin-left: 0.25rem;
+}
+
 .askButton {
   cursor: pointer;
   font-weight: 500;

@@ -3,14 +3,19 @@ import { useNavigate } from "react-router-dom";
 import QuestionContext from "../../contexts/QuestionContext";
 import UserContext from "../../contexts/UserContext";
 import AnswerContext from "../../contexts/AnswerContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import QuestionCard from "./QuestionCard/QuestionCard";
+import { IoFilterSharp } from "react-icons/io5";
+import FilterSort from "./FilterSort/FilterSort";
 
 function QuestionsPage() {
 
   const { questionList } = useContext(QuestionContext);
   const { answerList } = useContext(AnswerContext);
   const { userList, userloggedIn } = useContext(UserContext);
+
+  const [filteredList, setFilteredList] = useState(null);
+  const [filterSortOpen, setFilterSortOpen] = useState(false);
 
   const navigation = useNavigate();
 
@@ -32,6 +37,32 @@ function QuestionsPage() {
     )
   }
 
+  function handleFilter(filterType) {
+    if(filterType === "allQuestions") {
+      setFilteredList(null);
+    } else if(filterType === "noAnswers") {
+      let newQuestionList = questionList.filter(question => !(answerList.some(answer => answer.questionId === question.id)));
+      setFilteredList(newQuestionList);
+    } else if(filterType === "withAnswers") {
+      let newQuestionList = questionList.filter(question => answerList.some(answer => answer.questionId === question.id));
+      setFilteredList(newQuestionList);
+    }
+    setFilterSortOpen(false);
+  }
+
+  function answerNumberHelper(question) {
+    return answerList.filter(answer => answer.questionId === question.id);
+  }
+
+  function handleSort(sortType) {
+    let sortedQuestionList = [...questionList];
+    if(sortType === "mostAnswers") {
+      sortedQuestionList.sort((a,b) => answerNumberHelper(b).length - answerNumberHelper(a).length);
+    } else if(sortType === "leastAnswers") {
+      sortedQuestionList.sort((a,b) => answerNumberHelper(a).length - answerNumberHelper(b).length);
+    }
+  }
+
   return (
     <div className={styles.questionsPage}>
       <div className={styles.questionsPageContainer}>
@@ -43,13 +74,25 @@ function QuestionsPage() {
             <button className={styles.askButton} onClick={() => userloggedIn ? navigation("/askquestion") : navigation("/login")} >Ask Question</button>
           </div>
           <div className={styles.sortFilterContainer}>
-
+            <div className={styles.sortFilterButton} onClick={() => filterSortOpen ? setFilterSortOpen(false) : setFilterSortOpen(true)}>
+              <IoFilterSharp className={styles.filter} />
+              <p>Filter</p>
+            </div>
+            {filterSortOpen && <FilterSort handleFilter={handleFilter} handleSort={handleSort} />}
           </div>
         </div>
         <div className={styles.questionsPageContentBottom}>
           <div className={styles.questionsContainer}>
-            {
+            {!filteredList ?
               questionList.map(question => {
+                const questionAnswers = answerList.filter(answer => answer.questionId === question.id);
+                const questionOwner = userList.find(user => user.id === question.userId);
+                return (
+                  <QuestionCard questionData={question} key={question.id} answerNumber={questionAnswers.length} questionOwner={questionOwner} />
+                )
+              })
+              :
+              filteredList.map(question => {
                 const questionAnswers = answerList.filter(answer => answer.questionId === question.id);
                 const questionOwner = userList.find(user => user.id === question.userId);
                 return (
