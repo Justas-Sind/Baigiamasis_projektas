@@ -42,13 +42,24 @@ function QuestionProvider({ children }) {
     });
   }
 
+  function postQuestion(newQuestion) {
+    setQuestionList([...questionList, newQuestion]);
+    fetch("http://localhost:3000/userQuestions/", {
+      method: "POST",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(newQuestion)
+    });
+  }
+
   return (
     <QuestionContext.Provider
       value={{
         questionList,
         deleteQuestion,
         updateQuestion,
-        setQuestionList
+        postQuestion
       }}
     >
       {children}

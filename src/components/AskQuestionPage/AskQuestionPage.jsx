@@ -2,6 +2,7 @@ import styles from "./styles.module.css";
 import { useContext } from "react";
 import QuestionContext from "../../contexts/QuestionContext";
 import UserContext from "../../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -13,22 +14,13 @@ const schema = yup.object({
 
 function AskQuestionPage() {
   
-  const { register, resetField, handleSubmit, formState:{ errors } } = useForm({
+  const { register, handleSubmit, formState:{ errors } } = useForm({
     resolver: yupResolver(schema)
   });
+  const navigation = useNavigate();
 
-  const { questionList, setQuestionList } = useContext(QuestionContext);
+  const { postQuestion } = useContext(QuestionContext);
   const { userloggedIn } = useContext(UserContext);
-
-  async function addNewQuestion(newQuestionObject) {
-    await fetch("http://localhost:3000/userQuestions/", {
-      method: "POST",
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(newQuestionObject)
-    });
-  }
 
   const onSubmit = data => {
     const newQuestion = {
@@ -41,12 +33,8 @@ function AskQuestionPage() {
       isEdited: false
     };
 
-    addNewQuestion(newQuestion);
-    setQuestionList([...questionList, newQuestion]);
-
-    resetField("questionTitle");
-    resetField("questionContent");
-
+    postQuestion(newQuestion);
+    navigation('/questions')
   };
 
   return (
