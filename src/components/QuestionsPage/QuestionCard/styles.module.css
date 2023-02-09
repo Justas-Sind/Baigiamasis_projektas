@@ -1,6 +1,6 @@
 .question {
   display: flex;
-
+  margin-bottom: 0.5rem;
   padding: 1rem;
   box-shadow: 0 1px 4px #c4c4c4;
   background-color: white;
@@ -9,7 +9,8 @@
 
 .question:hover {
   cursor: pointer;
-  background-color: #fcf2e3;
+  background-color: #fffaf2;
+  transform: scale(1.01);
 }
 
 .likesAndAnswersContainer {

@@ -32,7 +32,7 @@
 
 .questionsPageContentBottom {
   margin: 2rem 0;
-  background: var(--white-color);
+  background: var(--background-color);
   box-shadow: 0 0 8px var(--background-color-darker);
 }
 
