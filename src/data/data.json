@@ -66,19 +66,13 @@
       "id": "bc689564-0299-41bc-95fe-f2fb21323340",
       "questionId": "2g5ged5c-d4v5-8sc4-1358-5d4v6801d5v45",
       "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
-      "answerContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
-      "likes": [],
+      "answerContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem loremcwecwvwvwrv",
+      "likes": [
+        "eca53159-b111-4d7d-9b6f-d63214ff0c16",
+        "82bbed02-d8eb-d5w6-8442-7f05801f17e9"
+      ],
       "dislikes": [],
-      "isEdited": false
-    },
-    {
-      "id": "e6ab0885-8145-4597-8d85-18338fb8e37a",
-      "questionId": "2g5ged5c-d4v5-8sc4-1358-5d4v6801d5v45",
-      "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
-      "answerContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
-      "likes": [],
-      "dislikes": [],
-      "isEdited": false
+      "isEdited": true
     }
   ]
 }

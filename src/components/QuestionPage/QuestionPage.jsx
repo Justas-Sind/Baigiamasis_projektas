@@ -4,10 +4,12 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import QuestionContext from "../../contexts/QuestionContext";
 import UserContext from "../../contexts/UserContext";
+import AnswerContext from "../../contexts/AnswerContext";
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import Answer from "./Answer/Answer";
 
 const schema = yup.object({
   questionContent: yup.string().required('Please enter the question description').max(500, "The question content cannot exceed 500 characters"),
@@ -20,6 +22,7 @@ function QuestionPage() {
     resolver: yupResolver(schema)
   });
 
+  const { answerList } = useContext(AnswerContext)
   const { questionList, deleteQuestion, updateQuestion } = useContext(QuestionContext);
   const { userList, userloggedIn } = useContext(UserContext);
 
@@ -27,7 +30,7 @@ function QuestionPage() {
 
   const [isEditable, setIsEditable] = useState(false);
 
-  if(!questionList || !userList) {
+  if(!questionList || !userList || !answerList) {
     return (
       <div className={styles.loaderContainer}>
         <div className={styles.gifContainer}>
@@ -38,7 +41,8 @@ function QuestionPage() {
   } 
 
   const questionData = questionList.find(question => question.id === id);
-  const questionCreator = userList.find(user => user.id === questionData.userId)
+  const questionCreator = userList.find(user => user.id === questionData.userId);
+  const questionAnswers = answerList.filter(answer => answer.questionId === questionData.id);
 
   function handleLikes() {
     if(!questionData.likes.includes(userloggedIn.id) && !questionData.dislikes.includes(userloggedIn.id)) {
@@ -130,7 +134,7 @@ function QuestionPage() {
                 </div>
             }
             {
-              !userloggedIn || userloggedIn.id !== questionCreator.id &&
+              (!userloggedIn || userloggedIn.id !== questionCreator.id) &&
                 <div className={styles.userContainer}>
                   <div className={styles.userAvatarContainer}>
                     <img src={questionCreator.avatar} alt="question creator's avatar" />
@@ -140,8 +144,17 @@ function QuestionPage() {
             }
           </div>
         </div>
-        <div className={styles.questionAnswersContainer}>
-
+        <div className={styles.questionAnswers}>
+          <div className={styles.questionAnswerscontainer}>
+            <h3>Answers</h3>
+            <div className={styles.questionAnswersList}>
+              {questionAnswers.length > 0 ?
+                questionAnswers.map(answer => <Answer answerData={answer} key={answer.id} />)
+                :
+                <h3>Srry</h3>
+              }
+            </div>
+          </div>
         </div>
         <div className={styles.questionAnswerFormContainer}>
 

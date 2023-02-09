@@ -17,10 +17,37 @@ function AnswerProvider({ children }) {
     fetchUserAnswers();
   }, []);
 
+  async function updateAnswer(targetAnswer) {
+    const index = answerList.findIndex(answer => answer.id === targetAnswer.id);
+    setAnswerList(current => current.map((answer, i) => {
+      if(i === index) {
+        return targetAnswer;
+      } else {
+        return answer;
+      }
+    }));
+    await fetch(`http://localhost:3000/userAnswers/${targetAnswer.id}`, {
+      method: "PUT",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(targetAnswer)
+    });
+  }
+
+  function deleteAnswer(deleteTargetId) {
+    setAnswerList(current => current.filter(answer => answer.id !== deleteTargetId));
+    fetch(`http://localhost:3000/userAnswers/${deleteTargetId}`, {
+      method: "DELETE"
+    });
+  }
+
   return (
     <AnswerContext.Provider
       value={{
-        answerList
+        answerList,
+        updateAnswer,
+        deleteAnswer
       }}
     >
       {children}

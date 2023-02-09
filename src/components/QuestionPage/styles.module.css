@@ -226,3 +226,14 @@
   background: var(--red-color);
 }
 
+/* Answers */
+
+.questionAnswers {
+  margin-top: 1rem;
+}
+
+.questionAnswerscontainer {
+  background: var(--white-color);
+  box-shadow: 0 0 4px 4px var(--background-color-darker);
+  padding: 1rem;
+}
