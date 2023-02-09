@@ -152,7 +152,7 @@ function QuestionPage() {
               {questionAnswers.length > 0 ?
                 questionAnswers.map(answer => <Answer answerData={answer} key={answer.id} />)
                 :
-                <h3>Srry</h3>
+                <p>There are 0 answers to this question</p>
               }
             </div>
           </div>

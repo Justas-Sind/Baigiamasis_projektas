@@ -238,7 +238,11 @@
   padding: 1rem;
 }
 
-.questionAnswerscontainer h3 {
+.questionAnswerscontainer > h3 {
   padding-bottom: 0.5rem;
 }
 
+.questionAnswersList > p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
