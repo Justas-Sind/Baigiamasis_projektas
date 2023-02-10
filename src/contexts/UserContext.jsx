@@ -18,11 +18,32 @@ function UserProvider({ children }) {
     fetchUserData();
   }, []);
 
+  async function postNewUser(newUser) {
+    await fetch("http://localhost:3000/userList/", {
+      method: "POST",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(newUser)
+    });
+  };
+
+  async function createNewUser(newUser) {
+    await postNewUser(newUser);
+    setUserList([...userList, newUser]);
+    setUserloggedIn(newUser);
+  }
+
+  function userLogIn(user) {
+    setUserloggedIn(user);
+  }
+
   return (
     <UserContext.Provider
       value={{
         userloggedIn,
-        setUserloggedIn,
+        userLogIn,
+        createNewUser,
         userList
       }}
     >

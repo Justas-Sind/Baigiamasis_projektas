@@ -19,7 +19,7 @@ function LogInPage() {
 
   const navigation = useNavigate();
 
-  const { setUserloggedIn } = useContext(UserContext);
+  const { userLogIn } = useContext(UserContext);
 
   const [loginInvalid, setLoginInvalid] = useState(false);
 
@@ -36,9 +36,10 @@ function LogInPage() {
     const userData = await fetchUserData();
     const loggedUser = userData.find(user => user.userName === data.userName && user.password === data.password);
 
-    if(!loggedUser) setLoginInvalid(true)
-    else {
-      setUserloggedIn(loggedUser);
+    if(!loggedUser) {
+      setLoginInvalid(true);
+    } else {
+      userLogIn(loggedUser);
       navigation('/questions');
     };
   };

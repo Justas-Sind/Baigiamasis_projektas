@@ -7,7 +7,7 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 
 const schema = yup.object({
-  userName: yup.string().required('This field is mandatory').min(5, 'Must be longer than 5 symbols').max(20, "Cannot exceed more than 20 symbols"),
+  userName: yup.string().required('This field is mandatory').min(4, 'Must be longer than 4 symbols').max(20, "Cannot exceed more than 20 symbols"),
   email: yup.string().email('Valid email is required').required('This field is mandatory'),
   password: yup.string().required('Password is mandatory').min(8, 'Must be longer than 8 symbols').max(16, "Cannot exceed more than 16 symbols"),
   passwordRepeat: yup.mixed().oneOf([yup.ref('password'), null], 'Passwords must match exactly'),
@@ -21,49 +21,35 @@ function SignUpPage() {
   });
   const navigation = useNavigate();
 
-  const { setUserloggedIn } = useContext(UserContext);
+  const { createNewUser } = useContext(UserContext);
 
   const [invalidUserName, setInvalidUserName] = useState(false);
   const [invalidEmail, setInvalidEmail] = useState(false);
-
-  async function fetchUserData() {
-    const jsonData = await fetch("http://localhost:3000/userList/")
-      .then(res => res.json());
-    return jsonData;
-  };
-
-  async function addNewUser(newUser) {
-    await fetch("http://localhost:3000/userList/", {
-      method: "POST",
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(newUser)
-    });
-  };
   
   const onSubmit = async data => {
     setInvalidEmail(false);
     setInvalidUserName(false);
 
-    const userData = await fetchUserData();
-
-    if(userData.find(user => user.email === data.email)){
+    const upToDateUserList = await fetch("http://localhost:3000/userList/")
+    .then(res => res.json());
+    
+    let newUser;
+    if(upToDateUserList.find(user => user.email === data.email)){
       setInvalidEmail(true);
-    } else if(userData.find(user => user.userName === data.userName)) {
+    } else if(upToDateUserList.find(user => user.userName === data.userName)) {
       setInvalidUserName(true);
     } else {
-      let newUser = {
+      newUser = {
         id: crypto.randomUUID(),
         userName: data.userName,
         email: data.email,
         password: data.password,
         avatar: data.avatar
       };
-      addNewUser(newUser);
-      setUserloggedIn(newUser);
+      createNewUser(newUser);
       navigation('/questions');
-    }
+    };
+
   };
 
   return (

@@ -43,6 +43,14 @@
   width: 100%;
 }
 
+.pageContainer span {
+  font-size: 0.75rem;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 38px;
+}
+
 .loginBtn {
   margin-top: 1rem;
   cursor: pointer;
