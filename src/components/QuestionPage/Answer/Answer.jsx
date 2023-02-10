@@ -104,11 +104,16 @@ function Answer( {answerData} ) {
         }
         {
           (!userloggedIn || userloggedIn.id !== answerCreator.id) &&
-            <div className={styles.userContainer}>
-              <div className={styles.userAvatarContainer}>
-                <img src={answerCreator.avatar} alt="question creator's avatar" />
+            <div className={styles.infoContainer}>
+              <div className={styles.dateContainer}>
+                <p>{answerData.answerDate}</p>
               </div>
-              <p>{answerCreator.userName}</p>
+              <div className={styles.userContainer}>
+                <div className={styles.userAvatarContainer}>
+                  <img src={answerCreator.avatar} alt="question creator's avatar" />
+                </div>
+                <p>{answerCreator.userName}</p>
+              </div>
             </div>
         }
       </div>

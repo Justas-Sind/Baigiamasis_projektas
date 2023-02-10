@@ -136,11 +136,16 @@ function QuestionPage() {
             }
             {
               (!userloggedIn || userloggedIn.id !== questionCreator.id) &&
-                <div className={styles.userContainer}>
-                  <div className={styles.userAvatarContainer}>
-                    <img src={questionCreator.avatar} alt="question creator's avatar" />
+                <div className={styles.infoContainer}>
+                  <div className={styles.dateContainer}>
+                    <p>{questionData.postDate}</p>
                   </div>
-                  <p>{questionCreator.userName}</p>
+                  <div className={styles.userContainer}>
+                    <div className={styles.userAvatarContainer}>
+                      <img src={questionCreator.avatar} alt="question creator's avatar" />
+                    </div>
+                    <p>{questionCreator.userName}</p>
+                  </div>
                 </div>
             }
           </div>

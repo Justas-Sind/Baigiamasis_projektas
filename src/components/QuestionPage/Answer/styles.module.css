@@ -72,6 +72,18 @@
   filter: contrast(1.25);
 }
 
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.dateContainer p {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
 .userContainer {
   display: flex;
   justify-content: flex-end;

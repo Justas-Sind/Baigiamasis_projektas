@@ -22,11 +22,16 @@ function QuestionCard( {questionData, answerNumber, questionOwner} ) {
         <div className={styles.questionTextContent}>
           <h3>{questionData.questionTitle}</h3>
         </div>
-        <div className={styles.userContainer}>
-          <div className={styles.userAvatarContainer}>
-            <img src={questionOwner.avatar} alt="question creator's avatar" />
+        <div className={styles.infoContainer}>
+          <div className={styles.dateContainer}>
+            <p>{questionData.postDate}</p>
           </div>
-          <p>{questionOwner.userName}</p>
+          <div className={styles.userContainer}>
+            <div className={styles.userAvatarContainer}>
+              <img src={questionOwner.avatar} alt="question creator's avatar" />
+            </div>
+            <p>{questionOwner.userName}</p>
+          </div>
         </div>
       </div>
     </div>

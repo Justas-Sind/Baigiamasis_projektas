@@ -19,6 +19,19 @@ function AnswerForm( {questionId} ) {
   const { postAnswer } = useContext(AnswerContext);
   const { userloggedIn } = useContext(UserContext);
 
+  function currentDate() {
+    const date = new Date();
+    const today = date.toLocaleDateString();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+
+    if (hours < 10) hours = "0" + hours;
+    if (minutes < 10) minutes = "0" + minutes;
+
+    const currentTime = today + " " + hours + ":" + minutes;
+    return currentTime
+  }
+
   const onSubmit = data => {
     const newAnswer = {
       id: crypto.randomUUID(),
@@ -27,6 +40,7 @@ function AnswerForm( {questionId} ) {
       answerContent: data.answerContent,
       likes: [],
       dislikes: [],
+      answerDate: currentDate(),
       isEdited: false
     };
     postAnswer(newAnswer);
