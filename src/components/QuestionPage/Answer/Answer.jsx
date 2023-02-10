@@ -95,27 +95,26 @@ function Answer( {answerData} ) {
               <p>{answerData.answerContent}</p>
           }
         </div>
-        {
-          !isEditable && userloggedIn.id === answerCreator.id &&
-            <div className={styles.buttonContainer}>
-              <button className={styles.editBtn} onClick={() => setIsEditable(true)}>Edit</button>
-              <button className={styles.deleteButton} onClick={() => handleDelete()}>Delete</button>
-            </div>
-        }
-        {
-          (!userloggedIn || userloggedIn.id !== answerCreator.id) &&
-            <div className={styles.infoContainer}>
-              <div className={styles.dateContainer}>
-                <p>{answerData.answerDate}</p>
+        <div className={styles.infoContainer}>
+          <div className={styles.dateContainer}>
+            <p>{answerData.answerDate}</p>
+          </div>
+          {(!userloggedIn || userloggedIn.id !== answerCreator.id) &&
+            <div className={styles.userContainer}>
+              <div className={styles.userAvatarContainer}>
+                <img src={answerCreator.avatar} alt="question creator's avatar" />
               </div>
-              <div className={styles.userContainer}>
-                <div className={styles.userAvatarContainer}>
-                  <img src={answerCreator.avatar} alt="question creator's avatar" />
-                </div>
-                <p>{answerCreator.userName}</p>
-              </div>
+              <p>{answerCreator.userName}</p>
             </div>
-        }
+          }
+          {
+            !isEditable && userloggedIn.id === answerCreator.id &&
+              <div className={styles.buttonContainer}>
+                <button className={styles.editBtn} onClick={() => setIsEditable(true)}>Edit</button>
+                <button className={styles.deleteButton} onClick={() => handleDelete()}>Delete</button>
+              </div>
+          }
+        </div>
       </div>
       {answerData.isEdited && <p className={styles.editMarker}>Edited</p>}
   </div>

@@ -128,26 +128,26 @@ function QuestionPage() {
                   <p>{questionData.questionContent}</p>
               }
             </div>
-            {
-              !isEditable && userloggedIn.id === questionCreator.id &&
-                <div className={styles.buttonContainer}>
-                  <button className={styles.editBtn} onClick={() => setIsEditable(true)}>Edit</button>
-                </div>
-            }
-            {
+            <div className={styles.infoContainer}>
+              <div className={styles.dateContainer}>
+                <p>{questionData.postDate}</p>
+              </div>
+              {
               (!userloggedIn || userloggedIn.id !== questionCreator.id) &&
-                <div className={styles.infoContainer}>
-                  <div className={styles.dateContainer}>
-                    <p>{questionData.postDate}</p>
+                <div className={styles.userContainer}>
+                  <div className={styles.userAvatarContainer}>
+                    <img src={questionCreator.avatar} alt="question creator's avatar" />
                   </div>
-                  <div className={styles.userContainer}>
-                    <div className={styles.userAvatarContainer}>
-                      <img src={questionCreator.avatar} alt="question creator's avatar" />
-                    </div>
-                    <p>{questionCreator.userName}</p>
-                  </div>
+                  <p>{questionCreator.userName}</p>
                 </div>
-            }
+              }
+              {
+                !isEditable && userloggedIn.id === questionCreator.id &&
+                  <div className={styles.buttonContainer}>
+                    <button className={styles.editBtn} onClick={() => setIsEditable(true)}>Edit</button>
+                  </div>
+              }
+            </div>
           </div>
         </div>
         <div className={styles.questionAnswers}>

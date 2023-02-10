@@ -129,17 +129,14 @@
   border: none;
   border-radius: 4px;
   margin-top: 0.25rem;
+  width: 100%;
+  min-height: 200px;
+  resize: none;
+  font-size: 1rem;
 }
 
 .answerTextContent form textarea:focus {
   outline: none;
-}
-
-.answerTextContent form textarea {
-  width: 100%;
-  height: 200px;
-  resize: none;
-  font-size: 1rem;
 }
 
 .answerTextContent form p {
