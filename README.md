@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 1. Open your terminal and then type
 
-`$ git clone {the url to the GitHub repo}`
+`$ git clone https://github.com/Justas-Sind/Baigiamasis_projektas`
 
 The command clones the repo hosted at Github.
 
