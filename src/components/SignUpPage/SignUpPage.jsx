@@ -7,7 +7,7 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 
 const schema = yup.object({
-  userName: yup.string().required('This field is mandatory'),
+  userName: yup.string().required('This field is mandatory').min(5, 'Must be longer than 5 symbols').max(20, "Cannot exceed more than 20 symbols"),
   email: yup.string().email('Valid email is required').required('This field is mandatory'),
   password: yup.string().required('Password is mandatory').min(8, 'Must be longer than 8 symbols').max(16, "Cannot exceed more than 16 symbols"),
   passwordRepeat: yup.mixed().oneOf([yup.ref('password'), null], 'Passwords must match exactly'),

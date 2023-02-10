@@ -13,7 +13,7 @@ import Answer from "./Answer/Answer";
 import AnswerForm from "./AnswerForm/AnswerForm";
 
 const schema = yup.object({
-  questionContent: yup.string().required('Please enter the question description').max(500, "The question content cannot exceed 500 characters"),
+  questionContent: yup.string().required('Please enter the question description').max(5000, "The question cannot exceed 5000 characters").min(50, "The question should be at least 50 characters long"),
 }).required();
 
 function QuestionPage() {
