@@ -1,0 +1,88 @@
+.questionsPage {
+  background: linear-gradient(135deg, #f59e0b, #d32020);
+  height: 100%;
+  padding: 2rem 0;
+}
+
+.questionsPageContainer {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.questionsPageContentTop {
+  background: var(--background-color);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.actionContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sortFilterContainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sortFilterButton {
+  align-self: flex-start;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color-darker);
+  padding: 0.25rem;
+  border-radius: 5px;
+}
+
+.sortFilterButton:hover {
+  cursor: pointer;
+  filter: brightness(0.95);
+}
+
+.sortFilterButton p {
+  font-size: 0.8rem;;
+  margin-left: 0.25rem;
+}
+
+.askButton {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  background: var(--text-color);
+  transition: all 0.25s ease;
+}
+
+.askButton:hover {
+  transform: scale(1.05);
+}
+
+.questionsPageContentBottom {
+  margin-top: 2rem;
+}
+
+.loaderContainer {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.loaderContainer .gifContainer {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.messageContainer {
+  margin-top: 2rem;
+}
+
+.messageContainer .message{
+  text-align: center;
+}
+

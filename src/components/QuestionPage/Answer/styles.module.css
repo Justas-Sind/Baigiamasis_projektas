@@ -1,0 +1,201 @@
+.answer {
+  background: var(--white-color);
+  box-shadow: 0 0 8px var(--background-color-darker);
+  padding: 1rem;
+  display: flex;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.answerLikesContainer {
+  padding-right: 0.5rem;
+  border-right: 1px solid #4b55634b;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.answerLikesContainer p {
+  color: var(--gray-medium-color);
+  font-size: 1rem;
+}
+
+.answerLikesContainer svg {
+  font-size: 1.5rem;
+}
+
+.activeButton {
+  color: var(--gray-medium-color);
+}
+
+.activeButton:hover {
+  cursor: pointer;
+  filter: brightness(1.3);
+}
+
+.suspendedButton {
+  color: var(--main-color-1);
+}
+
+.disabledAction {
+  visibility: hidden;
+}
+
+.answerTextContentContainer {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-wrap: anywhere;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editBtn {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.35rem;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  background: var(--gray-medium-color);
+  transition: all 0.25s ease;
+}
+
+.editBtn:hover {
+  filter: contrast(1.25);
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.dateContainer p {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+.userContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userAvatarContainer {
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.userAvatarContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.userContainer p {
+  margin-left: 0.25rem;
+  font-size: 0.85rem;
+}
+
+/* Form styles */
+
+.answerTextContent form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.answerTextContent form label {
+  position: relative;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.answerTextContent form textarea {
+  padding:0.3rem 0.5rem;
+  background-color: var(--background-color-darker);
+  border: none;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+  width: 100%;
+  min-height: 200px;
+  resize: none;
+  font-size: 1rem;
+}
+
+.answerTextContent form textarea:focus {
+  outline: none;
+}
+
+.answerTextContent form p {
+  color: var(--red-color);
+  font-size: 0.75rem;
+  position: absolute;
+  width: 100%;
+}
+
+.answerTextContent form label p {
+  top: 210px;
+}
+
+.answerTextContent form button {
+  align-self: flex-end;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.35rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  transition: all 0.25s ease;
+  margin-left: 0.5rem;
+}
+
+.answerTextContent form button:hover {
+  filter: contrast(1.25);
+}
+
+.completeBtn {
+  background: var(--green-color);
+}
+
+.cancelBtn {
+  background: var(--red-color);
+}
+
+.deleteButton {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.35rem;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  background: var(--red-color);
+  transition: all 0.25s ease;
+  margin-left: 0.25rem;
+}
+
+.deleteButton:hover {
+  filter: brightness(1.1);
+}
+
+.editMarker {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}

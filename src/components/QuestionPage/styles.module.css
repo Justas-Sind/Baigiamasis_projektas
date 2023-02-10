@@ -1,0 +1,268 @@
+.questionPage {
+  background: linear-gradient(135deg, #f59e0b, #d32020);
+  height: 100%;
+  padding: 2rem 0;
+}
+
+.questionPageContainer {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.questionTitleContainer {
+  background: var(--background-color);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.questionTitleContainerLeft {
+  display: flex;
+  align-items: flex-end;
+  overflow-wrap: anywhere;
+}
+
+.deleteButton {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  background: var(--red-color);
+  transition: all 0.25s ease;
+  margin-left: 1rem;
+}
+
+.deleteButton:hover {
+  filter: brightness(1.1);
+}
+
+.questionTitleContainerLeft p {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 0.25rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.questionContentContainer {
+  background: var(--background-color);
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+}
+
+.questionLikesContainer {
+  padding-right: 0.5rem;
+  border-right: 1px solid #4b55634b;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.questionLikesContainer p {
+  color: var(--gray-medium-color);
+  font-size: 1.25rem;
+}
+
+.questionTextContentContainer {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-wrap: anywhere;
+}
+
+.questionLikesContainer svg {
+  font-size: 2rem;
+}
+
+.activeButton {
+  color: var(--gray-medium-color);
+}
+
+.activeButton:hover {
+  cursor: pointer;
+  filter: brightness(1.3);
+}
+
+.suspendedButton {
+  color: var(--main-color-1);
+}
+
+.disabledAction {
+  visibility: hidden;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.loaderContainer {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.loaderContainer .gifContainer {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.messageContainer {
+  margin-top: 2rem;
+}
+
+.messageContainer .message{
+  text-align: center;
+}
+
+.editBtn {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.35rem;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  background: var(--gray-medium-color);
+  transition: all 0.25s ease;
+}
+
+.editBtn:hover {
+  filter: contrast(1.25);
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.dateContainer p {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+
+.userContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userAvatarContainer {
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.userAvatarContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.userContainer p {
+  margin-left: 0.25rem;
+  font-size: 0.85rem;
+}
+
+/* Form styles */
+
+.questionTextContent form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.questionTextContent form label {
+  position: relative;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.questionTextContent form textarea {
+  padding:0.3rem 0.5rem;
+  background-color: var(--background-color-darker);
+  border: none;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+  width: 100%;
+  min-height: 200px;
+  resize: none;
+  font-size: 1rem;
+}
+
+.questionTextContent form textarea:focus {
+  outline: none;
+}
+
+.questionTextContent form p {
+  color: var(--red-color);
+  font-size: 0.75rem;
+  position: absolute;
+  width: 100%;
+}
+
+.questionTextContent form label p {
+  top: 210px;
+}
+
+.questionTextContent form button {
+  align-self: flex-end;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.35rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  transition: all 0.25s ease;
+  margin-left: 0.5rem;
+}
+
+.questionTextContent form button:hover {
+  filter: contrast(1.25);
+}
+
+.completeBtn {
+  background: var(--green-color);
+}
+
+.cancelBtn {
+  background: var(--red-color);
+}
+
+/* Answers */
+
+.questionAnswers {
+  margin-top: 1rem;
+}
+
+.questionAnswerscontainer {
+  background: var(--background-color);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.questionAnswerscontainer > h3 {
+  padding-bottom: 0.5rem;
+}
+
+.questionAnswersList > p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
