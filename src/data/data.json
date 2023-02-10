@@ -74,17 +74,6 @@
       "isEdited": false
     },
     {
-      "id": "0deaa9b1-2c4d-4b9d-ba26-3d95b8208d3b",
-      "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
-      "questionTitle": "Question title 3",
-      "questionContent": "Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem Lorem lorem lorem",
-      "likes": [
-        "eca53159-b111-4d7d-9b6f-d63214ff0c16"
-      ],
-      "dislikes": [],
-      "isEdited": false
-    },
-    {
       "id": "61be0a5b-0a65-4fca-91ec-010ea8c283e5",
       "userId": "eca53159-b111-4d7d-9b6f-d63214ff0c16",
       "questionTitle": "Question title 4",
@@ -100,15 +89,6 @@
       "userId": "eca53159-b111-4d7d-9b6f-d63214ff0c16",
       "questionTitle": "Question title 5",
       "questionContent": "wedcwer fer gvetb rwys eb wetberynrwgq 3erv wedcwer fer gvetb rwys eb wetberynrwgq 3ervwedcwer fer gvetb rwys eb wetberynrwgq 3ervwedcwer fer gvetb rwys eb wetberynrwgq 3ervwedcwer fer gvetb rwys eb wetberynrwgq 3ervwedcwer fer gvetb rwys eb wetberynrwgq 3ervwedcwer fer gvetb rwys eb wetberynrwgq 3ervwedcwer fer gvetb rwys eb wetberynrwgq 3ervwedcwer fer gvetb rwys eb wetberynrwgq 3ervwedcwer fer gvetb rwys eb wetberynrwgq 3ervwedcwer fer gvetb rwys eb wetberynrwgq 3erv",
-      "likes": [],
-      "dislikes": [],
-      "isEdited": false
-    },
-    {
-      "id": "94bd11e3-56ee-46f7-b3ec-952c9797a2b3",
-      "userId": "82bbed02-d8eb-d5w6-8442-7f05801f17e9",
-      "questionTitle": "Question title 6",
-      "questionContent": "q3ewrtgfyhb   gkwu nikeajrngv;an lqiwkjn glkwbnf;wjnfglqketjgnf;wlAJfngaeunfwknk j kjWN;Kwjbk;w JB ;JWBKw rjnl wjrkrf",
       "likes": [],
       "dislikes": [],
       "isEdited": false

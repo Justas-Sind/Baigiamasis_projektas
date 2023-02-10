@@ -5,12 +5,12 @@ import UserContext from "../../contexts/UserContext";
 
 function NavBar() {
 
-  const { userloggedIn, setUserloggedIn } = useContext(UserContext);
+  const { userloggedIn, userLogOut } = useContext(UserContext);
 
   const navigation = useNavigate();
 
   function handleLogOut() {
-    setUserloggedIn(false);
+    userLogOut();
     navigation('/login');
   }
 
