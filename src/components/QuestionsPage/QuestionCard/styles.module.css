@@ -5,6 +5,7 @@
   background-color: var(--background-color);
   transition: all 200ms ease-in-out;
   border-radius: 5px;
+  align-items: center;
 }
 
 .question:hover {
